@@ -119,9 +119,19 @@
             transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
             transform-style: preserve-3d;
         }
-        .flip-card:hover .flip-card-inner {
+        
+        /* Mode Desktop: Menggunakan Hover */
+        @media (hover: hover) and (pointer: fine) {
+            .flip-card:hover .flip-card-inner {
+                transform: rotateY(180deg);
+            }
+        }
+        
+        /* Mode Mobile: Menggunakan class tambahan dari JS */
+        .flip-card.is-flipped .flip-card-inner {
             transform: rotateY(180deg);
         }
+
         .flip-card-front, .flip-card-back {
             position: absolute;
             width: 100%;
@@ -150,7 +160,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <div class="flex-shrink-0 font-bold text-xl tracking-tighter">
-                    Hello!<span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-blue-400">.M</span>
+                    SP<span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-blue-400">.M</span>
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
@@ -161,7 +171,7 @@
                     </div>
                 </div>
                 <div class="hidden md:block">
-                    <a href="https://wa.me/62895366966056" target="_blank" class="bg-gradient-to-r from-brand-600 to-blue-600 hover:from-brand-500 hover:to-blue-500 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:shadow-[0_0_25px_rgba(139,92,246,0.5)]">
+                    <a href="https://wa.me/6281234567890" target="_blank" class="bg-gradient-to-r from-brand-600 to-blue-600 hover:from-brand-500 hover:to-blue-500 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:shadow-[0_0_25px_rgba(139,92,246,0.5)]">
                         Mari Diskusi
                     </a>
                 </div>
@@ -182,10 +192,10 @@
                 Saya <strong class="text-white font-medium">Syahrul Putra Mulyana</strong>, Social Media Specialist yang siap membantu merek Anda berkembang melalui konten kreatif dan strategi digital berbasis data.
             </p>
             <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                <a href="https://wa.me/62895366966056" target="_blank" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-brand-600 to-blue-600 text-white rounded-full font-semibold text-lg transition-all flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(139,92,246,0.4)] hover:scale-105">
+                <a href="https://wa.me/6281234567890" target="_blank" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-brand-600 to-blue-600 text-white rounded-full font-semibold text-lg transition-all flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(139,92,246,0.4)] hover:scale-105">
                     <i class="fab fa-whatsapp text-xl"></i> Hubungi WhatsApp
                 </a>
-                <a href="https://instagram.com/syhynn_" target="_blank" class="w-full sm:w-auto px-8 py-4 glass-panel hover:bg-white/10 text-white rounded-full font-semibold text-lg transition-all flex items-center justify-center gap-2 hover:scale-105">
+                <a href="https://instagram.com/syahrulputra" target="_blank" class="w-full sm:w-auto px-8 py-4 glass-panel hover:bg-white/10 text-white rounded-full font-semibold text-lg transition-all flex items-center justify-center gap-2 hover:scale-105">
                     <i class="fab fa-instagram text-xl text-pink-500"></i> Kunjungi Instagram
                 </a>
             </div>
@@ -210,40 +220,40 @@
                         <div>
                             <h4 class="text-slate-400 text-sm uppercase tracking-wider mb-3">Creative Software</h4>
                             <div class="flex flex-wrap gap-3">
-                                <span class="glass-tag px-4 py-2 rounded-lg flex items-center gap-2 transition-transform cursor-default text-white"><img src="images/canva2.png" class="w-6">Canva</span>
-                                <span class="glass-tag px-4 py-2 rounded-lg flex items-center gap-2 transition-transform cursor-default text-white"><img src="images/capcut.png" class="w-6">CapCut</span>
-                                <span class="glass-tag px-4 py-2 rounded-lg flex items-center gap-2 transition-transform cursor-default text-white"><img src="images/photoshop.png" class="w-6">Photoshop</span>
-                                <span class="glass-tag px-4 py-2 rounded-lg flex items-center gap-2 transition-transform cursor-default text-white"><img src="images/ilustrator.png" class="w-6" >Adobe Illustrator</span>
-                                <span class="glass-tag px-4 py-2 rounded-lg flex items-center gap-2 transition-transform cursor-default text-white"><img src="images/premier pro.png" class="w-6">Premiere Pro</span>
-                                <span class="glass-tag px-4 py-2 rounded-lg flex items-center gap-2 transition-transform cursor-default text-white"><img src="images/corel.png" class="w-6">CorelDraw</span>
+                                <span class="glass-tag px-4 py-2 rounded-lg flex items-center gap-2 transition-transform cursor-default text-white"><img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Canva_icon_2021.svg" class="w-5 h-5 brightness-0 invert"> Canva</span>
+                                <span class="glass-tag px-4 py-2 rounded-lg flex items-center gap-2 transition-transform cursor-default text-white"><img src="https://upload.wikimedia.org/wikipedia/en/2/20/CapCut_logo.png" class="w-5 h-5"> CapCut</span>
+                                <span class="glass-tag px-4 py-2 rounded-lg flex items-center gap-2 transition-transform cursor-default text-white"><i class="fab fa-adobe text-blue-400"></i> Photoshop</span>
+                                <span class="glass-tag px-4 py-2 rounded-lg flex items-center gap-2 transition-transform cursor-default text-white"><i class="fab fa-adobe text-orange-400"></i> Adobe Illustrator</span>
+                                <span class="glass-tag px-4 py-2 rounded-lg flex items-center gap-2 transition-transform cursor-default text-white"><i class="fas fa-video text-purple-400"></i> Premiere Pro</span>
+                                <span class="glass-tag px-4 py-2 rounded-lg flex items-center gap-2 transition-transform cursor-default text-white"><i class="fas fa-pen-nib text-green-400"></i> CorelDraw</span>
                             </div>
                         </div>
 
                         <div>
                             <h4 class="text-slate-400 text-sm uppercase tracking-wider mb-3">Management & Analytics</h4>
                             <div class="flex flex-wrap gap-3">
-                                <span class="glass-tag px-4 py-2 rounded-lg flex items-center gap-2 text-white"><img src="images/google sheet.png" class="w-6">Google Sheets</span>
-                                <span class="glass-tag px-4 py-2 rounded-lg flex items-center gap-2 text-white"><img src="images/google doc.png" class="w-6">Google Docs</span>
-                                <span class="glass-tag px-4 py-2 rounded-lg flex items-center gap-2 text-white"><img src="images/notion.png" class="w-6">Notion</span>
-                                <span class="glass-tag px-4 py-2 rounded-lg flex items-center gap-2 text-white"><img src="images/meta.png" class="w-6">Meta Business</span>
-                                <span class="glass-tag px-4 py-2 rounded-lg flex items-center gap-2 text-white"><img src="images/milanote.png" class="w-6">Milanote</span>
-                                <span class="glass-tag px-4 py-2 rounded-lg flex items-center gap-2 text-white"><img src="images/tiktok logo.png" class="w-6">TikTok Studio</span>
-                                <span class="glass-tag px-4 py-2 rounded-lg flex items-center gap-2 text-white"><img src="images/google ads.png" class="w-6">Google Ads</span>
-                                <span class="glass-tag px-4 py-2 rounded-lg flex items-center gap-2 text-white"><img src="images/miro.png" class="w-6">Miro</span>
-                                <span class="glass-tag px-4 py-2 rounded-lg flex items-center gap-2 text-white"><img src="images/xmind.png" class="w-6">XMind</span>
+                                <span class="glass-tag px-4 py-2 rounded-lg flex items-center gap-2 text-white"><i class="fas fa-file-excel text-emerald-400"></i> Google Sheets</span>
+                                <span class="glass-tag px-4 py-2 rounded-lg flex items-center gap-2 text-white"><i class="fas fa-file-word text-blue-400"></i> Google Docs</span>
+                                <span class="glass-tag px-4 py-2 rounded-lg flex items-center gap-2 text-white"><i class="fas fa-cube text-slate-200"></i> Notion</span>
+                                <span class="glass-tag px-4 py-2 rounded-lg flex items-center gap-2 text-white"><i class="fab fa-meta text-blue-500"></i> Meta Business</span>
+                                <span class="glass-tag px-4 py-2 rounded-lg flex items-center gap-2 text-white"><i class="fas fa-border-all text-rose-400"></i> Milanote</span>
+                                <span class="glass-tag px-4 py-2 rounded-lg flex items-center gap-2 text-white"><i class="fab fa-tiktok text-pink-400"></i> TikTok Studio</span>
+                                <span class="glass-tag px-4 py-2 rounded-lg flex items-center gap-2 text-white"><i class="fab fa-google text-blue-400"></i> Google Ads</span>
+                                <span class="glass-tag px-4 py-2 rounded-lg flex items-center gap-2 text-white"><i class="fas fa-project-diagram text-yellow-400"></i> Miro</span>
+                                <span class="glass-tag px-4 py-2 rounded-lg flex items-center gap-2 text-white"><i class="fas fa-sitemap text-emerald-400"></i> Mind Mapping</span>
                             </div>
                         </div>
 
                         <div>
                             <h4 class="text-slate-400 text-sm uppercase tracking-wider mb-3">Artificial Intelligence</h4>
                             <div class="flex flex-wrap gap-3">
-                                <span class="glass-tag px-4 py-2 rounded-lg flex items-center gap-2 text-white"><img src="images/gemini.png" class="w-6"> Gemini</span>
-                                <span class="glass-tag px-4 py-2 rounded-lg flex items-center gap-2 text-white"><img src="images/chatgpt.png" class="w-6"> ChatGPT</span>
-                                <span class="glass-tag px-4 py-2 rounded-lg flex items-center gap-2 text-white"><img src="images/claude.png" class="w-6"> Claude</span>
-                                <span class="glass-tag px-4 py-2 rounded-lg flex items-center gap-2 text-white"><img src="images/metaai.png" class="w-6"> Meta AI</span>
-                                <span class="glass-tag px-4 py-2 rounded-lg flex items-center gap-2 text-white"><img src="images/deepseek.png" class="w-6"> DeepSeek</span>
-                                <span class="glass-tag px-4 py-2 rounded-lg flex items-center gap-2 text-white"><img src="images/github.png" class="w-6"> GitHub Copilot</span>
-                                <span class="glass-tag px-4 py-2 rounded-lg flex items-center gap-2 text-white"><img src="images/mid.png" class="w-6"> Midjourney</span>
+                                <span class="glass-tag px-4 py-2 rounded-lg flex items-center gap-2 text-white"><i class="fas fa-sparkles text-blue-400"></i> Gemini</span>
+                                <span class="glass-tag px-4 py-2 rounded-lg flex items-center gap-2 text-white"><i class="fas fa-robot text-emerald-400"></i> ChatGPT</span>
+                                <span class="glass-tag px-4 py-2 rounded-lg flex items-center gap-2 text-white"><i class="fas fa-brain text-orange-400"></i> Claude</span>
+                                <span class="glass-tag px-4 py-2 rounded-lg flex items-center gap-2 text-white"><i class="fab fa-meta text-blue-500"></i> Meta AI</span>
+                                <span class="glass-tag px-4 py-2 rounded-lg flex items-center gap-2 text-white"><i class="fas fa-network-wired text-cyan-400"></i> DeepSeek</span>
+                                <span class="glass-tag px-4 py-2 rounded-lg flex items-center gap-2 text-white"><i class="fab fa-github text-white"></i> GitHub Copilot</span>
+                                <span class="glass-tag px-4 py-2 rounded-lg flex items-center gap-2 text-white"><i class="fas fa-palette text-purple-400"></i> Midjourney</span>
                             </div>
                         </div>
 
@@ -271,12 +281,12 @@
                             <div class="overflow-hidden rounded-xl mb-3 border border-white/10 shadow-lg relative group">
                                 
                                 <!-- Developer: Ganti link 'src' di bawah ini dengan link/lokasi foto asli Anda untuk menggantinya -->
-                                <img src="images/Foto syahrul.png" class="w-100" alt="Syahrul Putra Mulyana" class="w-full h-48 md:h-56 object-cover object-center transition-transform duration-700 group-hover:scale-105">
+                                <img id="profile-img" src="https://images.unsplash.com/photo-1555212697-194d092e3b8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Syahrul Putra Mulyana" class="w-full h-48 md:h-56 object-cover object-center transition-transform duration-700 group-hover:scale-105">
                                 <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
 
                             </div>
                             <p class="text-sm text-slate-300 italic text-center px-4">
-                                Hii🙋‍♂️
+                                Menciptakan strategi digital yang tidak hanya menarik secara visual, tetapi juga memberikan hasil nyata.
                             </p>
                         </div>
 
@@ -290,18 +300,8 @@
                                 <i class="fas fa-graduation-cap text-brand-400 text-xl"></i>
                             </div>
                             <div>
-                                <h5 class="font-bold text-lg text-white">SMK Al Huda Kota Kediri</h5>
-                                <p class="text-slate-400 text-sm">Teknik Pemesinan</p>
-                            </div>
-                        </div>
-                        <h4 class="text-lg font-semibold mb-3 border-b border-white/10 pb-2 text-white"></h4>
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 rounded-full glass-tag flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-graduation-cap text-brand-400 text-xl"></i>
-                            </div>
-                            <div>
-                                <h5 class="font-bold text-lg text-white">Universitas Nusantara PGRI Kediri</h5>
-                                <p class="text-slate-400 text-sm">Teknik Informatika</p>
+                                <h5 class="font-bold text-lg text-white">SMK Al Huda</h5>
+                                <p class="text-slate-400 text-sm">Kota Kediri</p>
                             </div>
                         </div>
                     </div>
@@ -328,7 +328,7 @@
                         <div class="flip-card-front glass-panel p-6 shadow-[0_0_30px_rgba(239,68,68,0.15)] overflow-hidden flex flex-col border border-white/10">
                             <!-- Flip Indicator -->
                             <div class="absolute top-5 right-5 flex items-center gap-2 text-white/50 z-20">
-                                <span class="text-[10px] uppercase tracking-widest font-bold opacity-0 group-hover:opacity-100 transition-opacity">Balik</span>
+                                <span class="text-[10px] uppercase tracking-widest font-bold opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity"><span class="lg:hidden">Geser &larr;</span><span class="hidden lg:inline">Balik</span></span>
                                 <i class="fas fa-arrows-rotate animate-[spin_4s_linear_infinite] group-hover:text-red-400 transition-colors"></i>
                             </div>
                             <!-- Styling effects -->
@@ -390,7 +390,7 @@
                     <div class="flip-card-inner">
                         <div class="flip-card-front glass-panel p-6 shadow-[0_0_30px_rgba(59,130,246,0.15)] overflow-hidden flex flex-col border border-white/10">
                             <div class="absolute top-5 right-5 flex items-center gap-2 text-white/50 z-20">
-                                <span class="text-[10px] uppercase tracking-widest font-bold opacity-0 group-hover:opacity-100 transition-opacity">Balik</span>
+                                <span class="text-[10px] uppercase tracking-widest font-bold opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity"><span class="lg:hidden">Geser &larr;</span><span class="hidden lg:inline">Balik</span></span>
                                 <i class="fas fa-arrows-rotate animate-[spin_4s_linear_infinite] group-hover:text-blue-400 transition-colors"></i>
                             </div>
                             <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-cyan-500"></div>
@@ -446,7 +446,7 @@
                     <div class="flip-card-inner">
                         <div class="flip-card-front glass-panel p-6 shadow-[0_0_30px_rgba(16,185,129,0.15)] overflow-hidden flex flex-col border border-white/10">
                             <div class="absolute top-5 right-5 flex items-center gap-2 text-white/50 z-20">
-                                <span class="text-[10px] uppercase tracking-widest font-bold opacity-0 group-hover:opacity-100 transition-opacity">Balik</span>
+                                <span class="text-[10px] uppercase tracking-widest font-bold opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity"><span class="lg:hidden">Geser &larr;</span><span class="hidden lg:inline">Balik</span></span>
                                 <i class="fas fa-arrows-rotate animate-[spin_4s_linear_infinite] group-hover:text-emerald-400 transition-colors"></i>
                             </div>
                             <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500 to-teal-500"></div>
@@ -506,7 +506,7 @@
                     <div class="flip-card-inner">
                         <div class="flip-card-front glass-panel p-6 shadow-[0_0_30px_rgba(245,158,11,0.15)] overflow-hidden flex flex-col border border-white/10">
                             <div class="absolute top-5 right-5 flex items-center gap-2 text-white/50 z-20">
-                                <span class="text-[10px] uppercase tracking-widest font-bold opacity-0 group-hover:opacity-100 transition-opacity">Balik</span>
+                                <span class="text-[10px] uppercase tracking-widest font-bold opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity"><span class="lg:hidden">Geser &larr;</span><span class="hidden lg:inline">Balik</span></span>
                                 <i class="fas fa-arrows-rotate animate-[spin_4s_linear_infinite] group-hover:text-amber-400 transition-colors"></i>
                             </div>
                             <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 to-yellow-500"></div>
@@ -566,7 +566,7 @@
                     <div class="flip-card-inner">
                         <div class="flip-card-front glass-panel p-6 shadow-[0_0_30px_rgba(20,184,166,0.15)] overflow-hidden flex flex-col border border-white/10">
                             <div class="absolute top-5 right-5 flex items-center gap-2 text-white/50 z-20">
-                                <span class="text-[10px] uppercase tracking-widest font-bold opacity-0 group-hover:opacity-100 transition-opacity">Balik</span>
+                                <span class="text-[10px] uppercase tracking-widest font-bold opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity"><span class="lg:hidden">Geser &larr;</span><span class="hidden lg:inline">Balik</span></span>
                                 <i class="fas fa-arrows-rotate animate-[spin_4s_linear_infinite] group-hover:text-teal-400 transition-colors"></i>
                             </div>
                             <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-teal-500 to-emerald-400"></div>
@@ -626,7 +626,7 @@
                     <div class="flip-card-inner">
                         <div class="flip-card-front glass-panel p-6 shadow-[0_0_30px_rgba(99,102,241,0.15)] overflow-hidden flex flex-col border border-white/10">
                             <div class="absolute top-5 right-5 flex items-center gap-2 text-white/50 z-20">
-                                <span class="text-[10px] uppercase tracking-widest font-bold opacity-0 group-hover:opacity-100 transition-opacity">Balik</span>
+                                <span class="text-[10px] uppercase tracking-widest font-bold opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity"><span class="lg:hidden">Geser &larr;</span><span class="hidden lg:inline">Balik</span></span>
                                 <i class="fas fa-arrows-rotate animate-[spin_4s_linear_infinite] group-hover:text-indigo-400 transition-colors"></i>
                             </div>
                             <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-500 to-purple-500"></div>
@@ -741,22 +741,22 @@
                 
                 <!-- Item 1: Design -->
                 <div class="gallery-item design telurkita portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
-                    <img src="https://images.unsplash.com/photo-1596450514735-3162b21c430b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Design Feed Telur Kita" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 z-0">
+                    <img src="https://images.unsplash.com/photo-1596450514735-3162b21c430b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Design Feed Telur Kita" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
-                    <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0">
+                    <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
                         <span class="text-[10px] font-bold px-3 py-1 bg-gradient-to-r from-red-500 to-rose-500 rounded-full text-white mb-3 inline-block shadow-md uppercase tracking-wider">@telurkitaofficial</span>
                         <h4 class="text-xl font-bold text-white tracking-tight">Desain Edukasi</h4>
                         <p class="text-sm text-slate-300 mt-1 font-light">Carousel & Single Post</p>
                     </div>
 
-                    <!-- Overlay Akses Postingan (Tanpa Limit Waktu) -->
-                    <div class="absolute inset-0 bg-slate-950/90 backdrop-blur-md z-30 flex flex-col items-center justify-center p-6 text-center opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300">
-                        <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                    <!-- Overlay Akses Postingan -->
+                    <div class="absolute inset-0 bg-slate-950/90 backdrop-blur-md z-30 flex flex-col items-center justify-center p-6 text-center opacity-0 pointer-events-none group-hover:opacity-100 group-[.is-active]:opacity-100 group-hover:pointer-events-auto group-[.is-active]:pointer-events-auto transition-all duration-300">
+                        <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-4 translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-transform duration-500">
                             <i class="fas fa-external-link-alt text-xl text-white"></i>
                         </div>
-                        <h4 class="text-white font-bold mb-2 tracking-tight translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Lihat Postingan Asli</h4>
-                        <p class="text-xs text-slate-300 mb-6 font-light translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Akses resolusi penuh langsung di platform.</p>
-                        <a href="https://instagram.com/telurkitaofficial" target="_blank" class="px-6 py-2.5 bg-gradient-to-r from-red-500 to-rose-500 rounded-full text-sm text-white font-semibold flex items-center gap-2 shadow-[0_0_15px_rgba(239,68,68,0.4)] hover:scale-105 transition-transform translate-y-4 group-hover:translate-y-0 duration-500">
+                        <h4 class="text-white font-bold mb-2 tracking-tight translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-transform duration-500">Lihat Postingan Asli</h4>
+                        <p class="text-xs text-slate-300 mb-6 font-light translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-transform duration-500">Akses resolusi penuh langsung di platform.</p>
+                        <a href="https://instagram.com/telurkitaofficial" target="_blank" class="px-6 py-2.5 bg-gradient-to-r from-red-500 to-rose-500 rounded-full text-sm text-white font-semibold flex items-center gap-2 shadow-[0_0_15px_rgba(239,68,68,0.4)] hover:scale-105 transition-transform translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 duration-500">
                             <i class="fab fa-instagram"></i> Buka Tautan
                         </a>
                     </div>
@@ -765,22 +765,21 @@
                 <!-- Item 2: Video -->
                 <div class="gallery-item video ortidjoe portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
                     <!-- Thumbnail -->
-                    <img src="https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Video Ortidjoe Bakery" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 z-0">
+                    <img src="https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Video Ortidjoe Bakery" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     
-                    <!-- Preview Video (Hidden by default, plays on hover) -->
-                    <!-- Ganti src="..." dengan link video MP4 singkat asli Anda nanti -->
+                    <!-- Preview Video -->
                     <video src="https://www.w3schools.com/html/mov_bbb.mp4" muted loop playsinline class="preview-video absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 z-10"></video>
                     
-                    <div class="absolute inset-0 bg-slate-900/40 group-hover:bg-slate-900/20 transition-colors z-10"></div>
+                    <div class="absolute inset-0 bg-slate-900/40 group-hover:bg-slate-900/20 group-[.is-active]:bg-slate-900/20 transition-colors z-10"></div>
                     
                     <!-- Play Button Overlay -->
                     <div class="absolute inset-0 flex items-center justify-center video-overlay z-20">
-                        <div class="w-16 h-16 bg-white/20 backdrop-blur-md border border-white/30 rounded-full flex items-center justify-center shadow-lg transition-transform group-hover:scale-110">
+                        <div class="w-16 h-16 bg-white/20 backdrop-blur-md border border-white/30 rounded-full flex items-center justify-center shadow-lg transition-transform group-hover:scale-110 group-[.is-active]:scale-110">
                             <i class="fas fa-play text-white text-xl ml-1 drop-shadow-md"></i>
                         </div>
                     </div>
 
-                    <!-- Overlay Full Video Prompt (Muncul setelah 5 detik) -->
+                    <!-- Overlay Full Video Prompt -->
                     <div class="full-video-prompt hidden opacity-0 absolute inset-0 bg-slate-950/90 backdrop-blur-md z-30 flex-col items-center justify-center p-6 text-center transition-all duration-300">
                         <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-4">
                             <i class="fas fa-lock text-xl text-white"></i>
@@ -801,22 +800,22 @@
 
                 <!-- Item 3: Design -->
                 <div class="gallery-item design mitramandiri portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
-                    <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Design Mitra Mandiri" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 z-0">
+                    <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Design Mitra Mandiri" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
-                    <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0">
+                    <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
                         <span class="text-[10px] font-bold px-3 py-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full text-white mb-3 inline-block shadow-md uppercase tracking-wider">Mitra Mandiri</span>
                         <h4 class="text-xl font-bold text-white tracking-tight">Desain Promosi PC</h4>
                         <p class="text-sm text-slate-300 mt-1 font-light">Feeds Instagram</p>
                     </div>
 
-                    <!-- Overlay Akses Postingan (Tanpa Limit Waktu) -->
-                    <div class="absolute inset-0 bg-slate-950/90 backdrop-blur-md z-30 flex flex-col items-center justify-center p-6 text-center opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300">
-                        <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                    <!-- Overlay Akses Postingan -->
+                    <div class="absolute inset-0 bg-slate-950/90 backdrop-blur-md z-30 flex flex-col items-center justify-center p-6 text-center opacity-0 pointer-events-none group-hover:opacity-100 group-[.is-active]:opacity-100 group-hover:pointer-events-auto group-[.is-active]:pointer-events-auto transition-all duration-300">
+                        <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-4 translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-transform duration-500">
                             <i class="fas fa-external-link-alt text-xl text-white"></i>
                         </div>
-                        <h4 class="text-white font-bold mb-2 tracking-tight translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Lihat Postingan Asli</h4>
-                        <p class="text-xs text-slate-300 mb-6 font-light translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Akses resolusi penuh langsung di platform.</p>
-                        <a href="https://instagram.com/mitramandiricomputer" target="_blank" class="px-6 py-2.5 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full text-sm text-white font-semibold flex items-center gap-2 shadow-[0_0_15px_rgba(59,130,246,0.4)] hover:scale-105 transition-transform translate-y-4 group-hover:translate-y-0 duration-500">
+                        <h4 class="text-white font-bold mb-2 tracking-tight translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-transform duration-500">Lihat Postingan Asli</h4>
+                        <p class="text-xs text-slate-300 mb-6 font-light translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-transform duration-500">Akses resolusi penuh langsung di platform.</p>
+                        <a href="https://instagram.com/mitramandiricomputer" target="_blank" class="px-6 py-2.5 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full text-sm text-white font-semibold flex items-center gap-2 shadow-[0_0_15px_rgba(59,130,246,0.4)] hover:scale-105 transition-transform translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 duration-500">
                             <i class="fab fa-instagram"></i> Buka Tautan
                         </a>
                     </div>
@@ -824,16 +823,16 @@
 
                 <!-- Item 4: Video -->
                 <div class="gallery-item video oase portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
-                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Video Oase Cafe" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 z-0">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Video Oase Cafe" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     
                     <!-- Preview Video -->
                     <video src="https://www.w3schools.com/html/mov_bbb.mp4" muted loop playsinline class="preview-video absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 z-10"></video>
                     
-                    <div class="absolute inset-0 bg-slate-900/40 group-hover:bg-slate-900/20 transition-colors z-10"></div>
+                    <div class="absolute inset-0 bg-slate-900/40 group-hover:bg-slate-900/20 group-[.is-active]:bg-slate-900/20 transition-colors z-10"></div>
                     
                     <!-- Play Button Overlay -->
                     <div class="absolute inset-0 flex items-center justify-center video-overlay z-20">
-                        <div class="w-16 h-16 bg-white/20 backdrop-blur-md border border-white/30 rounded-full flex items-center justify-center shadow-lg transition-transform group-hover:scale-110">
+                        <div class="w-16 h-16 bg-white/20 backdrop-blur-md border border-white/30 rounded-full flex items-center justify-center shadow-lg transition-transform group-hover:scale-110 group-[.is-active]:scale-110">
                             <i class="fas fa-play text-white text-xl ml-1 drop-shadow-md"></i>
                         </div>
                     </div>
@@ -857,24 +856,24 @@
                     </div>
                 </div>
 
-                <!-- Item 5: Poster (Kategori Baru) -->
+                <!-- Item 5: Poster -->
                 <div class="gallery-item poster homely portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
-                    <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Poster Homely Syariah" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 z-0">
+                    <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Poster Homely Syariah" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
-                    <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0">
+                    <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
                         <span class="text-[10px] font-bold px-3 py-1 bg-gradient-to-r from-teal-500 to-emerald-400 rounded-full text-white mb-3 inline-block shadow-md uppercase tracking-wider">Homely Syariah</span>
                         <h4 class="text-xl font-bold text-white tracking-tight">Poster Info Kos</h4>
                         <p class="text-sm text-slate-300 mt-1 font-light">Poster Digital Terstruktur</p>
                     </div>
 
-                    <!-- Overlay Akses Postingan (Tanpa Limit Waktu) -->
-                    <div class="absolute inset-0 bg-slate-950/90 backdrop-blur-md z-30 flex flex-col items-center justify-center p-6 text-center opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300">
-                        <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                    <!-- Overlay Akses Postingan -->
+                    <div class="absolute inset-0 bg-slate-950/90 backdrop-blur-md z-30 flex flex-col items-center justify-center p-6 text-center opacity-0 pointer-events-none group-hover:opacity-100 group-[.is-active]:opacity-100 group-hover:pointer-events-auto group-[.is-active]:pointer-events-auto transition-all duration-300">
+                        <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-4 translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-transform duration-500">
                             <i class="fas fa-external-link-alt text-xl text-white"></i>
                         </div>
-                        <h4 class="text-white font-bold mb-2 tracking-tight translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Lihat Postingan Asli</h4>
-                        <p class="text-xs text-slate-300 mb-6 font-light translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Akses resolusi penuh langsung di platform.</p>
-                        <a href="https://instagram.com/homely_syariah" target="_blank" class="px-6 py-2.5 bg-gradient-to-r from-teal-500 to-emerald-400 rounded-full text-sm text-white font-semibold flex items-center gap-2 shadow-[0_0_15px_rgba(20,184,166,0.4)] hover:scale-105 transition-transform translate-y-4 group-hover:translate-y-0 duration-500">
+                        <h4 class="text-white font-bold mb-2 tracking-tight translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-transform duration-500">Lihat Postingan Asli</h4>
+                        <p class="text-xs text-slate-300 mb-6 font-light translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-transform duration-500">Akses resolusi penuh langsung di platform.</p>
+                        <a href="https://instagram.com/homely_syariah" target="_blank" class="px-6 py-2.5 bg-gradient-to-r from-teal-500 to-emerald-400 rounded-full text-sm text-white font-semibold flex items-center gap-2 shadow-[0_0_15px_rgba(20,184,166,0.4)] hover:scale-105 transition-transform translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 duration-500">
                             <i class="fab fa-instagram"></i> Buka Tautan
                         </a>
                     </div>
@@ -882,16 +881,16 @@
 
                  <!-- Item 6: Video -->
                  <div class="gallery-item video telurkita portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
-                    <img src="https://images.unsplash.com/photo-1541889815033-66fc1a141d6b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Video Telur Kita" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 z-0">
+                    <img src="https://images.unsplash.com/photo-1541889815033-66fc1a141d6b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Video Telur Kita" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     
                     <!-- Preview Video -->
                     <video src="https://www.w3schools.com/html/mov_bbb.mp4" muted loop playsinline class="preview-video absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 z-10"></video>
                     
-                    <div class="absolute inset-0 bg-slate-900/40 group-hover:bg-slate-900/20 transition-colors z-10"></div>
+                    <div class="absolute inset-0 bg-slate-900/40 group-hover:bg-slate-900/20 group-[.is-active]:bg-slate-900/20 transition-colors z-10"></div>
                     
                     <!-- Play Button Overlay -->
                     <div class="absolute inset-0 flex items-center justify-center video-overlay z-20">
-                        <div class="w-16 h-16 bg-white/20 backdrop-blur-md border border-white/30 rounded-full flex items-center justify-center shadow-lg transition-transform group-hover:scale-110">
+                        <div class="w-16 h-16 bg-white/20 backdrop-blur-md border border-white/30 rounded-full flex items-center justify-center shadow-lg transition-transform group-hover:scale-110 group-[.is-active]:scale-110">
                             <i class="fas fa-play text-white text-xl ml-1 drop-shadow-md"></i>
                         </div>
                     </div>
@@ -915,24 +914,24 @@
                     </div>
                 </div>
 
-                <!-- Item 7: Dibimbing Agency (New) -->
+                <!-- Item 7: Dibimbing Agency -->
                 <div class="gallery-item design dibimbing portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
-                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Design Dibimbing Agency" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 z-0">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Design Dibimbing Agency" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
-                    <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0">
+                    <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
                         <span class="text-[10px] font-bold px-3 py-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full text-white mb-3 inline-block shadow-md uppercase tracking-wider">Dibimbing Agency</span>
                         <h4 class="text-xl font-bold text-white tracking-tight">Creative Campaign</h4>
                         <p class="text-sm text-slate-300 mt-1 font-light">Visual Konten Edukasi</p>
                     </div>
 
-                    <!-- Overlay Akses Postingan (Tanpa Limit Waktu) -->
-                    <div class="absolute inset-0 bg-slate-950/90 backdrop-blur-md z-30 flex flex-col items-center justify-center p-6 text-center opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300">
-                        <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                    <!-- Overlay Akses Postingan -->
+                    <div class="absolute inset-0 bg-slate-950/90 backdrop-blur-md z-30 flex flex-col items-center justify-center p-6 text-center opacity-0 pointer-events-none group-hover:opacity-100 group-[.is-active]:opacity-100 group-hover:pointer-events-auto group-[.is-active]:pointer-events-auto transition-all duration-300">
+                        <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-4 translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-transform duration-500">
                             <i class="fas fa-external-link-alt text-xl text-white"></i>
                         </div>
-                        <h4 class="text-white font-bold mb-2 tracking-tight translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Lihat Postingan Asli</h4>
-                        <p class="text-xs text-slate-300 mb-6 font-light translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Akses resolusi penuh langsung di platform.</p>
-                        <a href="#" target="_blank" class="px-6 py-2.5 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full text-sm text-white font-semibold flex items-center gap-2 shadow-[0_0_15px_rgba(99,102,241,0.4)] hover:scale-105 transition-transform translate-y-4 group-hover:translate-y-0 duration-500">
+                        <h4 class="text-white font-bold mb-2 tracking-tight translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-transform duration-500">Lihat Postingan Asli</h4>
+                        <p class="text-xs text-slate-300 mb-6 font-light translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-transform duration-500">Akses resolusi penuh langsung di platform.</p>
+                        <a href="#" target="_blank" class="px-6 py-2.5 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full text-sm text-white font-semibold flex items-center gap-2 shadow-[0_0_15px_rgba(99,102,241,0.4)] hover:scale-105 transition-transform translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 duration-500">
                             <i class="fab fa-instagram"></i> Buka Tautan
                         </a>
                     </div>
@@ -1091,49 +1090,131 @@
             }, { passive: false });
         });
 
-        // --- Fitur Video Preview (Khusus Desktop) ---
-        const videoItems = document.querySelectorAll('.portfolio-group.video');
+        // --- Fitur Portfolio Interaktif (Desktop Hover & Mobile Click) ---
+        const portfolioGroups = document.querySelectorAll('.portfolio-group');
         let hoverTimers = {};
 
-        videoItems.forEach((item, index) => {
+        function startVideoPreview(index, videoElem, promptElem, playIcon) {
+            if (!promptElem.classList.contains('locked')) {
+                videoElem.play().catch(e => console.log('Autoplay ditahan', e));
+                videoElem.style.opacity = '1';
+                if(playIcon) playIcon.style.opacity = '0';
+                
+                hoverTimers[index] = setTimeout(() => {
+                    videoElem.pause();
+                    promptElem.classList.add('locked');
+                    promptElem.classList.remove('hidden', 'opacity-0');
+                    promptElem.classList.add('flex', 'opacity-100');
+                }, 5000);
+            }
+        }
+
+        function stopVideoPreview(index, videoElem, promptElem, playIcon) {
+            clearTimeout(hoverTimers[index]);
+            videoElem.pause();
+            videoElem.currentTime = 0;
+            videoElem.style.opacity = '0';
+            if(playIcon) playIcon.style.opacity = '';
+            
+            promptElem.classList.remove('locked');
+            promptElem.classList.add('hidden', 'opacity-0');
+            promptElem.classList.remove('flex', 'opacity-100');
+        }
+
+        portfolioGroups.forEach((item, index) => {
+            const isVideo = item.classList.contains('video');
             const videoElem = item.querySelector('.preview-video');
             const promptElem = item.querySelector('.full-video-prompt');
             const playIcon = item.querySelector('.video-overlay');
 
-            if(videoElem && promptElem) {
-                item.addEventListener('mouseenter', () => {
-                    // Deteksi jika ukuran layar adalah Desktop (min-width: 1024px)
-                    if (window.matchMedia("(min-width: 1024px)").matches && !promptElem.classList.contains('locked')) {
-                        // Jalankan video
-                        videoElem.play().catch(e => console.log('Autoplay ditahan oleh browser', e));
-                        videoElem.style.opacity = '1';
-                        if(playIcon) playIcon.style.opacity = '0';
-                        
-                        // Hitung mundur 5 detik
-                        hoverTimers[index] = setTimeout(() => {
-                            videoElem.pause();
-                            promptElem.classList.add('locked');
-                            promptElem.classList.remove('hidden', 'opacity-0');
-                            promptElem.classList.add('flex', 'opacity-100');
-                        }, 5000);
+            // 1. --- Desktop Hover Logic ---
+            item.addEventListener('mouseenter', () => {
+                if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+                    if (isVideo && videoElem && promptElem) {
+                        startVideoPreview(index, videoElem, promptElem, playIcon);
+                    }
+                }
+            });
+
+            item.addEventListener('mouseleave', () => {
+                if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+                    if (isVideo && videoElem && promptElem) {
+                        stopVideoPreview(index, videoElem, promptElem, playIcon);
+                    }
+                }
+            });
+
+            // 2. --- Mobile Tap/Click Logic ---
+            item.addEventListener('click', (e) => {
+                // Abaikan jika digunakan di desktop (Karna hover otomatis berjalan)
+                if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+                
+                // Jangan dicegah jika user mengeklik tombol "Buka Tautan" / "Buka Video"
+                if (e.target.closest('a')) return;
+
+                const isActive = item.classList.contains('is-active');
+
+                // Matikan & Tutup semua kartu portofolio yang lain
+                portfolioGroups.forEach((otherItem, otherIndex) => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('is-active');
+                        if (otherItem.classList.contains('video')) {
+                            const oVid = otherItem.querySelector('.preview-video');
+                            const oPrompt = otherItem.querySelector('.full-video-prompt');
+                            const oPlay = otherItem.querySelector('.video-overlay');
+                            if (oVid && oPrompt) stopVideoPreview(otherIndex, oVid, oPrompt, oPlay);
+                        }
                     }
                 });
 
-                item.addEventListener('mouseleave', () => {
-                    // Reset semuanya ketika kursor dijauhkan
-                    clearTimeout(hoverTimers[index]);
-                    videoElem.pause();
-                    videoElem.currentTime = 0;
-                    videoElem.style.opacity = '0';
-                    if(playIcon) playIcon.style.opacity = '';
-                    
-                    // Sembunyikan prompt peringatan kembali
-                    promptElem.classList.remove('locked');
-                    promptElem.classList.add('hidden', 'opacity-0');
-                    promptElem.classList.remove('flex', 'opacity-100');
-                });
-            }
+                // Buka/Tutup Kartu yang sedang ditekan
+                if (!isActive) {
+                    item.classList.add('is-active');
+                    if (isVideo && videoElem && promptElem) {
+                        startVideoPreview(index, videoElem, promptElem, playIcon);
+                    }
+                } else {
+                    item.classList.remove('is-active');
+                    if (isVideo && videoElem && promptElem) {
+                        stopVideoPreview(index, videoElem, promptElem, playIcon);
+                    }
+                }
+            });
         });
+
+        // --- Fitur Swipe untuk Flip Card (Khusus Mobile) ---
+        const flipCards = document.querySelectorAll('.flip-card');
+        flipCards.forEach(card => {
+            let startX = 0;
+            let startY = 0;
+            
+            // Rekam titik awal sentuhan
+            card.addEventListener('touchstart', (e) => {
+                startX = e.changedTouches[0].screenX;
+                startY = e.changedTouches[0].screenY;
+            }, {passive: true});
+
+            // Hitung pergeseran ketika sentuhan dilepas
+            card.addEventListener('touchend', (e) => {
+                let endX = e.changedTouches[0].screenX;
+                let endY = e.changedTouches[0].screenY;
+                
+                let diffX = startX - endX;
+                let diffY = startY - endY;
+
+                // Memastikan usapan bersifat horizontal (kiri-kanan) dan bukan vertikal (scroll halaman)
+                if (Math.abs(diffX) > Math.abs(diffY)) {
+                    if (diffX > 40) {
+                        // Jika digeser ke Kiri, tampilkan sisi belakang (data)
+                        card.classList.add('is-flipped');
+                    } else if (diffX < -40) {
+                        // Jika digeser ke Kanan, kembalikan ke sisi depan (cover)
+                        card.classList.remove('is-flipped');
+                    }
+                }
+            }, {passive: true});
+        });
+
     </script>
 </body>
 </html>
