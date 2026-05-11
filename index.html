@@ -3035,14 +3035,14 @@
             toggleDropdown(menuId); // ini akan menutupnya karena statusnya sedang terbuka
 
             // 4. Eksekusi filter pada semua Gallery Items
-            const items = document.querySelectorAll('.reveal-up, .reveal-scale, .reveal-blur').forEach((el) => {
+            document.querySelectorAll('.gallery-item').forEach((item) => {
                 const matchType = currentFilters.type === 'all' || item.classList.contains(currentFilters.type);
                 const matchCompany = currentFilters.company === 'all' || item.classList.contains(currentFilters.company);
                 
                 if (matchType && matchCompany) {
-                    item.style.display = 'block';
+                    item.style.display = 'block'; // Tampilkan jika cocok
                 } else {
-                    item.style.display = 'none';
+                    item.style.display = 'none';  // Sembunyikan jika tidak cocok
                 }
             });
         }
