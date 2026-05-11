@@ -144,6 +144,22 @@
         .flip-card-back {
             transform: rotateY(180deg);
         }
+        /* --- ANIMASI SCROLL INTERAKTIF (GAYA APPLE/OPPO) --- */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(80px);
+            transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1); /* Kurva sangat mulus */
+        }
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.9) translateY(40px);
+            transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        /* State saat elemen masuk ke layar */
+        .reveal-visible {
+            opacity: 1 !important;
+            transform: translateY(0) scale(1) !important;
+        }
     </style>
 </head>
 <body class="antialiased selection:bg-brand-500 selection:text-white">
@@ -209,7 +225,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 
                 <!-- Tools & Software -->
-                <div class="order-2 lg:order-1">
+                <div class="order-2 lg:order-1 reveal-up">
                     <h3 class="text-2xl font-bold mb-8 flex items-center gap-3 text-white">
                         <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-brand-500 to-blue-500 flex items-center justify-center shadow-lg shadow-brand-500/30">
                             <i class="fas fa-layer-group text-white"></i> 
@@ -269,7 +285,7 @@
                 </div>
 
                 <!-- Education & Intro Info -->
-                <div class="order-1 lg:order-2 glass-panel p-8 rounded-3xl relative overflow-hidden group">
+                <div class="order-1 lg:order-2 glass-panel p-8 rounded-3xl relative overflow-hidden group reveal-scale">
                     <div class="absolute inset-0 bg-gradient-to-br from-brand-500/5 to-blue-500/5 opacity-50"></div>
                     <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-brand-500/20 to-transparent rounded-bl-full"></div>
                     
@@ -314,7 +330,7 @@
     <!-- Experience & Impact Section (With 3D Flip Cards) -->
     <section id="experience" class="py-24 relative z-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
+            <div class="text-center mb-16 reveal-up">
                 <div class="inline-block px-3 py-1 mb-4 border border-white/10 rounded-full bg-white/5 backdrop-blur-sm text-[10px] font-semibold tracking-widest text-blue-300 uppercase">Experience</div>
                 <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4">Pengalaman & Pencapaian</h2>
                 <p class="text-slate-400 max-w-2xl mx-auto text-lg font-light">Arahkan atau geser (hover/tap) pada kartu di bawah ini untuk melihat bukti analitik statistik dari strategi konten yang diterapkan.</p>
@@ -323,7 +339,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 
                 <!-- Telur Kita -->
-                <div class="flip-card h-[440px] group">
+                <div class="flip-card h-[440px] group reveal-scale">
                     <div class="flip-card-inner">
                         <!-- Front Face -->
                         <div class="flip-card-front glass-panel p-6 shadow-[0_0_30px_rgba(239,68,68,0.15)] overflow-hidden flex flex-col border border-white/10">
@@ -391,7 +407,7 @@
                 </div>
 
                 <!-- Mitra Mandiri -->
-                <div class="flip-card h-[440px] group">
+                <div class="flip-card h-[440px] group reveal-scale">
                     <div class="flip-card-inner">
                         <div class="flip-card-front glass-panel p-6 shadow-[0_0_30px_rgba(59,130,246,0.15)] overflow-hidden flex flex-col border border-white/10">
                             <div class="absolute top-5 right-5 flex items-center gap-2 text-white/50 z-20">
@@ -455,7 +471,7 @@
                 </div>
 
                 <!-- Ortidjoe Bakery -->
-                <div class="flip-card h-[440px] group">
+                <div class="flip-card h-[440px] group reveal-scale">
                     <div class="flip-card-inner">
                         <div class="flip-card-front glass-panel p-6 shadow-[0_0_30px_rgba(16,185,129,0.15)] overflow-hidden flex flex-col border border-white/10">
                             <div class="absolute top-5 right-5 flex items-center gap-2 text-white/50 z-20">
@@ -520,7 +536,7 @@
                 </div>
 
                 <!-- Oase Cafe -->
-                <div class="flip-card h-[440px] group">
+                <div class="flip-card h-[440px] group reveal-scale">
                     <div class="flip-card-inner">
                         <div class="flip-card-front glass-panel p-6 shadow-[0_0_30px_rgba(245,158,11,0.15)] overflow-hidden flex flex-col border border-white/10">
                             <div class="absolute top-5 right-5 flex items-center gap-2 text-white/50 z-20">
@@ -580,7 +596,7 @@
                 </div>
 
                 <!-- Homely Syariah -->
-                <div class="flip-card h-[440px] group">
+                <div class="flip-card h-[440px] group reveal-scale">
                     <div class="flip-card-inner">
                         <div class="flip-card-front glass-panel p-6 shadow-[0_0_30px_rgba(20,184,166,0.15)] overflow-hidden flex flex-col border border-white/10">
                             <div class="absolute top-5 right-5 flex items-center gap-2 text-white/50 z-20">
@@ -644,7 +660,7 @@
                 </div>
 
                 <!-- Dibimbing Agency -->
-                <div class="flip-card h-[440px] group">
+                <div class="flip-card h-[440px] group reveal-scale">
                     <div class="flip-card-inner">
                         <div class="flip-card-front glass-panel p-6 shadow-[0_0_30px_rgba(99,102,241,0.15)] overflow-hidden flex flex-col border border-white/10">
                             <div class="absolute top-5 right-5 flex items-center gap-2 text-white/50 z-20">
@@ -710,7 +726,7 @@
     <!-- Portfolio Gallery Section -->
     <section id="portfolio" class="py-24 relative z-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="glass-panel p-8 rounded-[2rem] mb-12 flex flex-col items-center text-center relative z-50">
+            <div class="glass-panel p-8 rounded-[2rem] mb-12 flex flex-col items-center text-center relative z-50 reveal-up">
                 <div class="inline-block px-3 py-1 mb-4 border border-white/10 rounded-full bg-white/5 backdrop-blur-sm text-[10px] font-semibold tracking-widest text-emerald-300 uppercase">Portfolio</div>
                 <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4">Karya Kreatif</h2>
                 <p class="text-slate-400 max-w-2xl text-lg font-light mb-8">Koleksi konten visual dan video interaktif yang dirancang untuk membangun interaksi audiens. Pilih kategori di bawah ini untuk menyaring karya.</p>
@@ -762,7 +778,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="gallery">
                 
                 <!-- Item 1: Design (telurkita) -->
-                <div class="gallery-item design telurkita portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design telurkita portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="telurkita/design grafis/design telurkita 1.png" alt="Design Feed Telur Kita" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -785,7 +801,7 @@
                 </div>
 
                 <!-- Item 2: Design (telurkita) -->
-                <div class="gallery-item design telurkita portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design telurkita portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="telurkita/design grafis/design telurkita 2.png" alt="Design Feed Telur Kita" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -808,7 +824,7 @@
                 </div>
 
                 <!-- Item 3: Design (telurkita) -->
-                <div class="gallery-item design telurkita portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design telurkita portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="telurkita/design grafis/design telurkita 3.png" alt="Design Feed Telur Kita" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -831,7 +847,7 @@
                 </div>
 
                 <!-- Item 4: Design (telurkita) -->
-                <div class="gallery-item design telurkita portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design telurkita portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="telurkita/design grafis/design telurkita 4.png" alt="Design Feed Telur Kita" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -854,7 +870,7 @@
                 </div>
 
                 <!-- Item 5: Design (telurkita) -->
-                <div class="gallery-item design telurkita portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design telurkita portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="telurkita/design grafis/design telurkita 5.png" alt="Design Feed Telur Kita" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -877,7 +893,7 @@
                 </div>
 
                 <!-- Item 6: Design (telurkita) -->
-                <div class="gallery-item design telurkita portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design telurkita portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="telurkita/design grafis/design telurkita 6.png" alt="Design Feed Telur Kita" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -900,7 +916,7 @@
                 </div>
 
                 <!-- Item 7: Design (telurkita) -->
-                <div class="gallery-item design telurkita portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design telurkita portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="telurkita/design grafis/design telurkita 7.png" alt="Design Feed Telur Kita" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -923,7 +939,7 @@
                 </div>
 
                 <!-- Item 8: Design (telurkita) -->
-                <div class="gallery-item design telurkita portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design telurkita portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="telurkita/design grafis/design telurkita 8.png" alt="Design Feed Telur Kita" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -946,7 +962,7 @@
                 </div>
 
                 <!-- Item 9: Design (telurkita) -->
-                <div class="gallery-item design telurkita portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design telurkita portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="telurkita/design grafis/design telurkita 9.png" alt="Design Feed Telur Kita" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -969,7 +985,7 @@
                 </div>
 
                 <!-- Item 1: Video telurkita -->
-                <div class="gallery-item video telurkita portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item video telurkita portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <!-- Thumbnail -->
                     <img src="telurkita/video/thumnail/thumnail 1.png" alt="Video TelurKita" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     
@@ -1005,7 +1021,7 @@
                 </div>
 
                  <!-- Item 2: Video telurkita -->
-                <div class="gallery-item video telurkita portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item video telurkita portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <!-- Thumbnail -->
                     <img src="telurkita/video/thumnail/thumnail 2.png" alt="Video TelurKita" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     
@@ -1041,7 +1057,7 @@
                 </div>
 
                 <!-- Item 3: Video telurkita -->
-                <div class="gallery-item video telurkita portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item video telurkita portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <!-- Thumbnail -->
                     <img src="telurkita/video/thumnail/thumnail 3.png" alt="Video TelurKita" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     
@@ -1077,7 +1093,7 @@
                 </div>
 
                 <!-- Item 4: Video telurkita -->
-                <div class="gallery-item video telurkita portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item video telurkita portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <!-- Thumbnail -->
                     <img src="telurkita/video/thumnail/thumnail 4.png" alt="Video TelurKita" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     
@@ -1113,7 +1129,7 @@
                 </div>
 
                 <!-- Item 5: Video telurkita -->
-                <div class="gallery-item video telurkita portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item video telurkita portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <!-- Thumbnail -->
                     <img src="telurkita/video/thumnail/thumnail 5.png" alt="Video TelurKita" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     
@@ -1149,7 +1165,7 @@
                 </div>
 
                 <!-- Item 1: Design Mitra Mandiri -->
-                <div class="gallery-item design mitramandiri portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design mitramandiri portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="mitramandiri/design grafis/design 1.jpg" alt="Design Mitra Mandiri" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -1172,7 +1188,7 @@
                 </div>
 
                 <!-- Item 2: Design Mitra Mandiri -->
-                <div class="gallery-item design mitramandiri portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design mitramandiri portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="mitramandiri/design grafis/design 2.jpg" alt="Design Mitra Mandiri" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -1195,7 +1211,7 @@
                 </div>
 
                 <!-- Item 3: Design Mitra Mandiri -->
-                <div class="gallery-item design mitramandiri portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design mitramandiri portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="mitramandiri/design grafis/design 3.jpg" alt="Design Mitra Mandiri" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -1218,7 +1234,7 @@
                 </div>
 
                 <!-- Item 4: Design Mitra Mandiri -->
-                <div class="gallery-item design mitramandiri portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design mitramandiri portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="mitramandiri/design grafis/design 4.jpg" alt="Design Mitra Mandiri" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -1241,7 +1257,7 @@
                 </div>
 
                 <!-- Item 5: Design Mitra Mandiri -->
-                <div class="gallery-item design mitramandiri portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design mitramandiri portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="mitramandiri/design grafis/design 5.jpg" alt="Design Mitra Mandiri" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -1264,7 +1280,7 @@
                 </div>
 
                 <!-- Item 6: Design Mitra Mandiri -->
-                <div class="gallery-item design mitramandiri portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design mitramandiri portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="mitramandiri/design grafis/design 6.jpg" alt="Design Mitra Mandiri" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -1287,7 +1303,7 @@
                 </div>
 
                 <!-- Item 7: Design Mitra Mandiri -->
-                <div class="gallery-item design mitramandiri portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design mitramandiri portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="mitramandiri/design grafis/design 7.jpg" alt="Design Mitra Mandiri" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -1310,7 +1326,7 @@
                 </div>
 
                 <!-- Item 8: Design Mitra Mandiri -->
-                <div class="gallery-item design mitramandiri portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design mitramandiri portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="mitramandiri/design grafis/design 8.jpg" alt="Design Mitra Mandiri" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -1333,7 +1349,7 @@
                 </div>
 
                 <!-- Item 9: Design Mitra Mandiri -->
-                <div class="gallery-item design mitramandiri portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design mitramandiri portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="mitramandiri/design grafis/design 9.jpg" alt="Design Mitra Mandiri" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -1356,7 +1372,7 @@
                 </div>
 
                 <!-- Item 1: Video Mitra Mandiri -->
-                <div class="gallery-item video mitramandiri portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item video mitramandiri portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <!-- Thumbnail -->
                     <img src="mitramandiri/video/thumnail/thumnail 1.jpg" alt="Video TelurKita" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     
@@ -1392,7 +1408,7 @@
                 </div>
 
                 <!-- Item 2: Video Mitra Mandiri -->
-                <div class="gallery-item video mitramandiri portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item video mitramandiri portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <!-- Thumbnail -->
                     <img src="mitramandiri/video/thumnail/thumnail 2.jpg" alt="Video TelurKita" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     
@@ -1429,7 +1445,7 @@
                 </div>
 
                 <!-- Item 3: Video Mitra Mandiri -->
-                <div class="gallery-item video mitramandiri portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item video mitramandiri portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <!-- Thumbnail -->
                     <img src="mitramandiri/video/thumnail/thumnail 3.jpg" alt="Video Mitra Mandiri" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     
@@ -1465,7 +1481,7 @@
                 </div>
 
                 <!-- Item 4: Video Mitra Mandiri -->
-                <div class="gallery-item video mitramandiri portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item video mitramandiri portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <!-- Thumbnail -->
                     <img src="mitramandiri/video/thumnail/thumnail 4.jpg" alt="Video TelurKita" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     
@@ -1501,7 +1517,7 @@
                 </div>
 
                 <!-- Item 5: Video Mitra Mandiri -->
-                <div class="gallery-item video mitramandiri portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item video mitramandiri portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <!-- Thumbnail -->
                     <img src="mitramandiri/video/thumnail/thumnail 5.jpg" alt="Video TelurKita" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     
@@ -1537,7 +1553,7 @@
                 </div>
 
                 <!-- Item 1: Design Oase -->
-                <div class="gallery-item design oase portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design oase portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="oase/desin grafis/design 1.jpg" alt="Design Oase Cafe" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -1560,7 +1576,7 @@
                 </div>
 
                 <!-- Item 2: Design Oase -->
-                <div class="gallery-item design oase portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design oase portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="oase/desin grafis/design 2.jpg" alt="Design Oase Cafe" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -1583,7 +1599,7 @@
                 </div>
 
                 <!-- Item 3: Design Oase -->
-                <div class="gallery-item design oase portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design oase portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="oase/desin grafis/design 3.jpg" alt="Design Oase Cafe" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -1606,7 +1622,7 @@
                 </div>
 
                 <!-- Item 4: Design Oase -->
-                <div class="gallery-item design oase portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design oase portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="oase/desin grafis/design 4.jpg" alt="Design Oase Cafe" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -1629,7 +1645,7 @@
                 </div>
 
                 <!-- Item 5: Design Oase -->
-                <div class="gallery-item design oase portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design oase portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="oase/desin grafis/design 5.jpg" alt="Design Oase Cafe" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -1652,7 +1668,7 @@
                 </div>
 
                 <!-- Item 6: Design Oase -->
-                <div class="gallery-item design oase portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design oase portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="oase/desin grafis/design 6.jpg" alt="Design Oase Cafe" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -1675,7 +1691,7 @@
                 </div>
 
                 <!-- Item 7: Design Oase -->
-                <div class="gallery-item design oase portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design oase portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="oase/desin grafis/design 7.jpg" alt="Design Oase Cafe" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -1698,7 +1714,7 @@
                 </div>
 
                 <!-- Item 8: Design Oase -->
-                <div class="gallery-item design oase portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design oase portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="oase/desin grafis/design 8.jpg" alt="Design Oase Cafe" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -1721,7 +1737,7 @@
                 </div>
 
                 <!-- Item 9: Design Oase -->
-                <div class="gallery-item design oase portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design oase portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="oase/desin grafis/design 9.jpg" alt="Design Oase Cafe" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -1745,7 +1761,7 @@
 
 
                 <!-- Item 1: Video Oase Cafe -->
-                <div class="gallery-item video oase portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item video oase portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="oase/video/thumnail/thumnail 1.jpg" alt="Video Oase Cafe" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     
                     <!-- Preview Video -->
@@ -1780,7 +1796,7 @@
                 </div>
 
                 <!-- Item 2: Video Oase Cafe -->
-                <div class="gallery-item video oase portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item video oase portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="oase/video/thumnail/thumnail 2.jpg" alt="Video Oase Cafe" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     
                     <!-- Preview Video -->
@@ -1815,7 +1831,7 @@
                 </div>
 
                 <!-- Item 3: Video Oase Cafe -->
-                <div class="gallery-item video oase portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item video oase portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="oase/video/thumnail/thumnail 3.jpg" alt="Video Oase Cafe" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     
                     <!-- Preview Video -->
@@ -1850,7 +1866,7 @@
                 </div>
 
                  <!-- Item 4: Video Oase Cafe -->
-                <div class="gallery-item video oase portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item video oase portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="oase/video/thumnail/thumnail 4.jpg" alt="Video Oase Cafe" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     
                     <!-- Preview Video -->
@@ -1885,7 +1901,7 @@
                 </div>
 
                 <!-- Item 5: Video Oase Cafe -->
-                <div class="gallery-item video oase portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item video oase portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="oase/video/thumnail/thumnail 5.jpg" alt="Video Oase Cafe" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     
                     <!-- Preview Video -->
@@ -1920,7 +1936,7 @@
                 </div>
 
                 <!-- Item 1: Design Homely -->
-                <div class="gallery-item design homely portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design homely portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="homely/design/design 1.jpg" alt="Poster Homely Syariah" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -1943,7 +1959,7 @@
                 </div>
 
                 <!-- Item 2: Design Homely -->
-                <div class="gallery-item design homely portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design homely portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="homely/design/design 2.jpg" alt="Poster Homely Syariah" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -1966,7 +1982,7 @@
                 </div>
 
                 <!-- Item 3: Design Homely -->
-                <div class="gallery-item design homely portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design homely portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="homely/design/design 3.jpg" alt="Poster Homely Syariah" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -1989,7 +2005,7 @@
                 </div>
 
                 <!-- Item 4: Design Homely -->
-                <div class="gallery-item design homely portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design homely portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="homely/design/design 4.jpg" alt="Poster Homely Syariah" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -2012,7 +2028,7 @@
                 </div>
 
                 <!-- Item 5: Design Homely -->
-                <div class="gallery-item design homely portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design homely portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="homely/design/design 5.jpg" alt="Poster Homely Syariah" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -2035,7 +2051,7 @@
                 </div>
 
                 <!-- Item 6: Design Homely -->
-                <div class="gallery-item design homely portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design homely portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="homely/design/design 6.jpg" alt="Poster Homely Syariah" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -2058,7 +2074,7 @@
                 </div>
 
                 <!-- Item 7: Design Homely -->
-                <div class="gallery-item design homely portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design homely portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="homely/design/design 7.jpg" alt="Poster Homely Syariah" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -2081,7 +2097,7 @@
                 </div>
 
                 <!-- Item 8: Design Homely -->
-                <div class="gallery-item design homely portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design homely portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="homely/design/design 8.jpg" alt="Poster Homely Syariah" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -2104,7 +2120,7 @@
                 </div>
 
                 <!-- Item 9: Design Homely -->
-                <div class="gallery-item design homely portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design homely portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="homely/design/design 9.jpg" alt="Poster Homely Syariah" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -2127,7 +2143,7 @@
                 </div>
 
                 <!-- Item 1: Video Homely -->
-                <div class="gallery-item video homely portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item video homely portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="homely/video/thumnail/thumnail 1.svg" alt="Video Oase Cafe" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     
                     <!-- Preview Video -->
@@ -2162,7 +2178,7 @@
                 </div>
 
                 <!-- Item 2: Video Homely -->
-                <div class="gallery-item video homely portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item video homely portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="homely/video/thumnail/thumnail 2.svg" alt="Video Oase Cafe" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     
                     <!-- Preview Video -->
@@ -2197,7 +2213,7 @@
                 </div>
 
                 <!-- Item 3: Video Homely -->
-                <div class="gallery-item video homely portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item video homely portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="homely/video/thumnail/thumnail 3.svg" alt="Video Oase Cafe" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     
                     <!-- Preview Video -->
@@ -2232,7 +2248,7 @@
                 </div>
 
                 <!-- Item 4: Video Homely -->
-                <div class="gallery-item video homely portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item video homely portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="homely/video/thumnail/thumnail 4.svg" alt="Video Oase Cafe" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     
                     <!-- Preview Video -->
@@ -2267,7 +2283,7 @@
                 </div>
 
                 <!-- Item 5: Video Homely -->
-                <div class="gallery-item video homely portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item video homely portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="homely/video/thumnail/thumnail 5.svg" alt="Video Oase Cafe" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     
                     <!-- Preview Video -->
@@ -2302,7 +2318,7 @@
                 </div>
 
                 <!-- Item 1:  Design Ortidjoe -->
-                <div class="gallery-item design ortidjoe portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design ortidjoe portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="ortidjoe/design/design 1.jpg" alt="Poster Homely Syariah" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -2325,7 +2341,7 @@
                 </div>
 
                 <!-- Item 2:  Design Ortidjoe -->
-                <div class="gallery-item design ortidjoe portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design ortidjoe portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="ortidjoe/design/design 2.jpg" alt="Design Ortidjoe" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -2348,7 +2364,7 @@
                 </div>
 
                 <!-- Item 3:  Design Ortidjoe -->
-                <div class="gallery-item design ortidjoe portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design ortidjoe portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="ortidjoe/design/design 3.jpg" alt="Poster Homely Syariah" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -2371,7 +2387,7 @@
                 </div>
 
                 <!-- Item 4:  Design Ortidjoe -->
-                <div class="gallery-item design ortidjoe portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design ortidjoe portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="ortidjoe/design/design 4.jpg" alt="Poster Homely Syariah" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -2394,7 +2410,7 @@
                 </div>
 
                 <!-- Item 5:  Design Ortidjoe -->
-                <div class="gallery-item design ortidjoe portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design ortidjoe portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="ortidjoe/design/design 5.jpg" alt="Poster Homely Syariah" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -2417,7 +2433,7 @@
                 </div>
 
                  <!-- Item 6:  Design Ortidjoe -->
-                <div class="gallery-item design ortidjoe portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design ortidjoe portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="ortidjoe/design/design 6.jpg" alt="Poster Homely Syariah" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -2440,7 +2456,7 @@
                 </div>
 
                 <!-- Item 7:  Design Ortidjoe -->
-                <div class="gallery-item design ortidjoe portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design ortidjoe portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="ortidjoe/design/design 7.jpg" alt="Poster Homely Syariah" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -2463,7 +2479,7 @@
                 </div>
 
                 <!-- Item 8:  Design Ortidjoe -->
-                <div class="gallery-item design ortidjoe portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design ortidjoe portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="ortidjoe/design/design 8.jpg" alt="Poster Homely Syariah" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -2486,7 +2502,7 @@
                 </div>
 
                 <!-- Item 9:  Design Ortidjoe -->
-                <div class="gallery-item design ortidjoe portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design ortidjoe portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="ortidjoe/design/design 9.jpg" alt="Poster Homely Syariah" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -2509,7 +2525,7 @@
                 </div>
 
                 <!-- Item 1: Video Ortidjoe -->
-                <div class="gallery-item video ortidjoe portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item video ortidjoe portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="ortidjoe/video/thumnail/thumnail 1.jpg" alt="Video Ortidjoe Bakery" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     
                     <!-- Preview Video -->
@@ -2544,7 +2560,7 @@
                 </div>
 
                 <!-- Item 2: Video Ortidjoe -->
-                <div class="gallery-item video ortidjoe portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item video ortidjoe portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="ortidjoe/video/thumnail/thumnail 2.jpg" alt="Video Ortidjoe Bakery" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     
                     <!-- Preview Video -->
@@ -2579,7 +2595,7 @@
                 </div>
 
                 <!-- Item 3: Video Ortidjoe -->
-                <div class="gallery-item video ortidjoe portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item video ortidjoe portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="ortidjoe/video/thumnail/thumnail 3.jpg" alt="Video Ortidjoe Bakery" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     
                     <!-- Preview Video -->
@@ -2614,7 +2630,7 @@
                 </div>
 
                 <!-- Item 4: Video Ortidjoe -->
-                <div class="gallery-item video ortidjoe portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item video ortidjoe portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="ortidjoe/video/thumnail/thumnail 4.jpg" alt="Video Ortidjoe Bakery" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     
                     <!-- Preview Video -->
@@ -2649,7 +2665,7 @@
                 </div>
 
                 <!-- Item 5: Video Ortidjoe -->
-                <div class="gallery-item video ortidjoe portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item video ortidjoe portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="ortidjoe/video/thumnail/thumnail 5.jpg" alt="Video Ortidjoe Bakery" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     
                     <!-- Preview Video -->
@@ -2684,7 +2700,7 @@
                 </div>
 
                 <!-- Item 1: Dibimbing Agency -->
-                <div class="gallery-item design dibimbing portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design dibimbing portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="dibimbing/design/design 1.jpg" alt="Design Dibimbing Agency" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -2707,7 +2723,7 @@
                 </div>
 
                 <!-- Item 2: Dibimbing Agency -->
-                <div class="gallery-item design dibimbing portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design dibimbing portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="dibimbing/design/design 2.jpg" alt="Design Dibimbing Agency" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -2730,7 +2746,7 @@
                 </div>
 
                 <!-- Item 3: Dibimbing Agency -->
-                <div class="gallery-item design dibimbing portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design dibimbing portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="dibimbing/design/design 3.jpg" alt="Design Dibimbing Agency" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -2753,7 +2769,7 @@
                 </div>
 
                 <!-- Item 4: Dibimbing Agency -->
-                <div class="gallery-item design dibimbing portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design dibimbing portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="dibimbing/design/design 4.jpg" alt="Design Dibimbing Agency" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -2776,7 +2792,7 @@
                 </div>
 
                 <!-- Item 5: Dibimbing Agency -->
-                <div class="gallery-item design dibimbing portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design dibimbing portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="dibimbing/design/design 5.jpg" alt="Design Dibimbing Agency" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -2799,7 +2815,7 @@
                 </div>
 
                 <!-- Item 6: Dibimbing Agency -->
-                <div class="gallery-item design dibimbing portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item design dibimbing portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="dibimbing/design/design 6.jpg" alt="Design Dibimbing Agency" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -2822,7 +2838,7 @@
                 </div>
 
                 <!-- Item 1: poster Dibimbing Agency -->
-                <div class="gallery-item poster dibimbing portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item poster dibimbing portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="dibimbing/poster/poster 1.jpg" alt="Design Dibimbing Agency" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -2845,7 +2861,7 @@
                 </div>
 
                 <!-- Item 2: poster Dibimbing Agency -->
-                <div class="gallery-item poster dibimbing portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group">
+                <div class="gallery-item poster dibimbing portfolio-group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/5] border border-white/10 shadow-lg group reveal-scale">
                     <img src="dibimbing/poster/poster 2.jpg" alt="Design Dibimbing Agency" class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110 z-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90 transition-opacity z-10"></div>
                     <div class="absolute bottom-0 left-0 p-6 z-20 transition-opacity duration-300 group-hover:opacity-0 group-[.is-active]:opacity-0">
@@ -3143,7 +3159,27 @@
                 }
             }, {passive: true});
         });
+// --- FITUR ANIMASI SCROLL DINAMIS (INTERSECTION OBSERVER) ---
+        const scrollObserverOptions = {
+            threshold: 0.15 // Animasi mulai saat 15% elemen terlihat di layar
+        };
 
+        const scrollObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Tambahkan class saat masuk layar (muncul)
+                    entry.target.classList.add('reveal-visible');
+                } else {
+                    // Hapus class saat keluar layar (agar saat di-scroll lagi, dia animasi lagi)
+                    entry.target.classList.remove('reveal-visible');
+                }
+            });
+        }, scrollObserverOptions);
+
+        // Aktifkan pemantauan pada semua elemen yang diberi class animasi
+        document.querySelectorAll('.reveal-up, .reveal-scale').forEach((el) => {
+            scrollObserver.observe(el);
+        });
     </script>
 </body>
 </html>
