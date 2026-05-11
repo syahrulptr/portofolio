@@ -32,6 +32,7 @@
             }
         }
     </script>
+    
     <style>
         body {
             background-color: #020617; /* Slate 950 */
@@ -160,6 +161,18 @@
             opacity: 1 !important;
             transform: translateY(0) scale(1) !important;
         }
+        @keyframes autoBlurReveal {
+            0% { opacity: 0; filter: blur(20px); transform: translateY(40px) scale(0.95); }
+            100% { opacity: 1; filter: blur(0px); transform: translateY(0) scale(1); }
+        }
+        .hero-animate {
+            animation: autoBlurReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+        }
+        .d-100 { animation-delay: 100ms; }
+        .d-300 { animation-delay: 300ms; }
+        .d-500 { animation-delay: 500ms; }
+        .d-700 { animation-delay: 700ms; }
     </style>
 </head>
 <body class="antialiased selection:bg-brand-500 selection:text-white">
@@ -197,25 +210,30 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="pt-32 pb-20 md:pt-48 md:pb-32 px-4 relative">
+    <section id="home" class="pt-32 pb-20 md:pt-48 md:pb-32 px-4 relative overflow-hidden">
         <div class="max-w-4xl mx-auto text-center relative z-10">
-            <div class="inline-block px-4 py-1.5 mb-6 border border-white/10 rounded-full bg-white/5 backdrop-blur-md shadow-sm">
+            
+            <div class="inline-block px-4 py-1.5 mb-6 border border-white/10 rounded-full bg-white/5 backdrop-blur-md shadow-sm hero-animate d-100">
                 <h2 class="text-slate-300 font-semibold tracking-widest uppercase text-xs">Creative Portfolio 2026</h2>
             </div>
-            <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight text-white">
+            
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight text-white hero-animate d-300">
                 Konten Kreatif & <br class="hidden md:block" /> Strategi Digital Marketing.
             </h1>
-            <p class="mt-4 text-xl text-slate-300 mb-10 leading-relaxed max-w-3xl mx-auto font-light">
+            
+            <p class="mt-4 text-xl text-slate-300 mb-10 leading-relaxed max-w-3xl mx-auto font-light hero-animate d-500">
                 Saya <strong class="text-white font-medium">Syahrul Putra Mulyana</strong>, Social Media Specialist yang siap membantu merek Anda berkembang melalui konten kreatif dan strategi digital berbasis data.
             </p>
-            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                <a href="https://wa.me/62895366966056" target="_blank" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-brand-600 to-blue-600 text-white rounded-full font-semibold text-lg transition-all flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(139,92,246,0.4)] hover:scale-105">
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 hero-animate d-700">
+                <a href="https://wa.me/62895366966056" target="_blank" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-brand-600 to-blue-600 text-white rounded-full font-semibold text-lg transition-all flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(139,92,246,0.4)] hover:scale-105 hover:-translate-y-1">
                     <i class="fab fa-whatsapp text-xl"></i> Hubungi WhatsApp
                 </a>
-                <a href="https://instagram.com/syhynn_" target="_blank" class="w-full sm:w-auto px-8 py-4 glass-panel hover:bg-white/10 text-white rounded-full font-semibold text-lg transition-all flex items-center justify-center gap-2 hover:scale-105">
+                <a href="https://instagram.com/syhynn_" target="_blank" class="w-full sm:w-auto px-8 py-4 glass-panel hover:bg-white/10 text-white rounded-full font-semibold text-lg transition-all flex items-center justify-center gap-2 hover:scale-105 hover:-translate-y-1 border border-white/10 hover:border-white/20">
                     <i class="fab fa-instagram text-xl text-pink-500"></i> Kunjungi Instagram
                 </a>
             </div>
+            
         </div>
     </section>
 
@@ -2994,8 +3012,7 @@
             toggleDropdown(menuId); // ini akan menutupnya karena statusnya sedang terbuka
 
             // 4. Eksekusi filter pada semua Gallery Items
-            const items = document.querySelectorAll('.gallery-item');
-            items.forEach(item => {
+            const items = document.querySelectorAll('.reveal-up, .reveal-scale, .reveal-blur').forEach((el) => {
                 const matchType = currentFilters.type === 'all' || item.classList.contains(currentFilters.type);
                 const matchCompany = currentFilters.company === 'all' || item.classList.contains(currentFilters.company);
                 
@@ -3180,6 +3197,32 @@
         document.querySelectorAll('.reveal-up, .reveal-scale').forEach((el) => {
             scrollObserver.observe(el);
         });
+        const homeSection = document.getElementById('home');
+        const heroElements = document.querySelectorAll('.hero-animate');
+        let hasLeftHome = false; // Deteksi apakah user sudah scroll ke bawah
+
+        if (homeSection && heroElements.length > 0) {
+            const heroObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    // Jika Beranda keluar dari layar (user scroll ke bawah)
+                    if (!entry.isIntersecting) {
+                        hasLeftHome = true; 
+                    } 
+                    // Jika Beranda masuk lagi ke layar DAN user sebelumnya sudah scroll ke bawah
+                    else if (entry.isIntersecting && hasLeftHome) {
+                        // Restart animasi dengan trik "Browser Reflow"
+                        heroElements.forEach(el => {
+                            el.style.animation = 'none';
+                            el.offsetHeight; // Memaksa browser membaca ulang elemen
+                            el.style.animation = ''; 
+                        });
+                        hasLeftHome = false; // Kembalikan ke status awal
+                    }
+                });
+            }, { threshold: 0.15 }); // Terpicu saat 15% beranda terlihat
+
+            heroObserver.observe(homeSection);
+        }
     </script>
 </body>
 </html>
