@@ -144,6 +144,22 @@
         .flip-card-back {
             transform: rotateY(180deg);
         }
+        /* --- ANIMASI SCROLL INTERAKTIF (GAYA APPLE/OPPO) --- */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(80px);
+            transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1); /* Kurva sangat mulus */
+        }
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.9) translateY(40px);
+            transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        /* State saat elemen masuk ke layar */
+        .reveal-visible {
+            opacity: 1 !important;
+            transform: translateY(0) scale(1) !important;
+        }
     </style>
 </head>
 <body class="antialiased selection:bg-brand-500 selection:text-white">
@@ -209,7 +225,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 
                 <!-- Tools & Software -->
-                <div class="order-2 lg:order-1">
+                <div class="order-2 lg:order-1 reveal-up">
                     <h3 class="text-2xl font-bold mb-8 flex items-center gap-3 text-white">
                         <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-brand-500 to-blue-500 flex items-center justify-center shadow-lg shadow-brand-500/30">
                             <i class="fas fa-layer-group text-white"></i> 
@@ -269,7 +285,7 @@
                 </div>
 
                 <!-- Education & Intro Info -->
-                <div class="order-1 lg:order-2 glass-panel p-8 rounded-3xl relative overflow-hidden group">
+                <div class="order-1 lg:order-2 glass-panel p-8 rounded-3xl relative overflow-hidden group reveal-scale">
                     <div class="absolute inset-0 bg-gradient-to-br from-brand-500/5 to-blue-500/5 opacity-50"></div>
                     <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-brand-500/20 to-transparent rounded-bl-full"></div>
                     
@@ -3153,7 +3169,27 @@
                 }
             }, {passive: true});
         });
+// --- FITUR ANIMASI SCROLL DINAMIS (INTERSECTION OBSERVER) ---
+        const scrollObserverOptions = {
+            threshold: 0.15 // Animasi mulai saat 15% elemen terlihat di layar
+        };
 
+        const scrollObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Tambahkan class saat masuk layar (muncul)
+                    entry.target.classList.add('reveal-visible');
+                } else {
+                    // Hapus class saat keluar layar (agar saat di-scroll lagi, dia animasi lagi)
+                    entry.target.classList.remove('reveal-visible');
+                }
+            });
+        }, scrollObserverOptions);
+
+        // Aktifkan pemantauan pada semua elemen yang diberi class animasi
+        document.querySelectorAll('.reveal-up, .reveal-scale').forEach((el) => {
+            scrollObserver.observe(el);
+        });
     </script>
 </body>
 </html>
